@@ -1,4 +1,5 @@
 import { Pagination } from "react-bootstrap";
+import { constants } from "../constants";
 
 function ArticlePagination({
   totalPost,
@@ -7,10 +8,14 @@ function ArticlePagination({
 }: {
   totalPost: number;
   currentPage: number;
-  onPaginate: (pageNumber : number) => void;
+  onPaginate: (pageNumber: number) => void;
 }) {
   let pageNumbers = [];
-  for (let number = 1; number <= Math.ceil(totalPost / 10)  ; number++) {
+  for (
+    let number = 1;
+    number <= Math.ceil(totalPost / constants.PAGE_LIMIT);
+    number++
+  ) {
     pageNumbers.push(
       <Pagination.Item
         key={number}

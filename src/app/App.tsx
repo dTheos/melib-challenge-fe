@@ -17,9 +17,9 @@ const App: FC<{}> = () => {
     async function fetch() {
       try {
         const data = await fetchArticles(currentPage);
-        console.log(data)
         setArticles(data.content);
         setTotal(data.totalArticles);
+        window.scrollTo(0, 0);
       } catch (err: any) {
         throw Error(err);
       }
@@ -39,6 +39,11 @@ const App: FC<{}> = () => {
       </div>
       <div className="container">
         <div className="news">
+          <ArticlePagination
+            totalPost={total}
+            currentPage={currentPage}
+            onPaginate={paginate}
+          />
           {articles?.map((article, index) => (
             <Article
               title={article.title}
