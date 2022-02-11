@@ -1,0 +1,32 @@
+a {
+  text-decoration: none;
+}
+.card {
+  border-radius: 10%;
+  align-items: center;
+  max-width: 300px;
+  height: 360px;
+  padding-bottom: 1.5rem;
+  color: black;
+  transition: transform 0.2;
+  .card-img {
+    border-radius: 10% 10% 0 0;
+    height: 170px;
+    width: 300px;
+    object-fit: cover;
+  }
+  span {
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: inline-block;
+  }
+  .card-body {
+    user-select: auto;
+  }
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px -3px black;
+  transform: scale(1.1);
+}
